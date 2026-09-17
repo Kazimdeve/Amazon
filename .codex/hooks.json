@@ -1,0 +1,31 @@
+{
+  "description": "Capture each user prompt and final Codex response for the 8x assignment.",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File .codex/hooks/capture-agent-turn.ps1",
+            "commandWindows": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File .codex/hooks/capture-agent-turn.ps1",
+            "timeout": 30,
+            "statusMessage": "Capturing prompt"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File .codex/hooks/capture-agent-turn.ps1",
+            "commandWindows": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File .codex/hooks/capture-agent-turn.ps1",
+            "timeout": 30,
+            "statusMessage": "Capturing final response"
+          }
+        ]
+      }
+    ]
+  }
+}
