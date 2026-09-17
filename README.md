@@ -1,6 +1,6 @@
 # Amazon Clone
 
-A responsive, educational Amazon-style storefront built as a hiring assignment with React, TypeScript, Vite, and React Router. It includes product discovery, search/filter/sort, product variants, a persistent cart, and a local demo checkout. It is not affiliated with Amazon and does not process real orders or payments.
+A responsive, Amazon-style storefront built with React, TypeScript, Vite, and React Router. It includes product discovery, search/filter/sort, product variants, a persistent cart, and a local demo checkout. It is not affiliated with Amazon and does not process real orders or payments.
 
 ## Setup
 
