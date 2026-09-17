@@ -1,0 +1,48 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-inline-size: 20rem;
+  font-family: var(--font-family-base);
+  color: var(--color-text-primary);
+  background: var(--color-page-background);
+  text-size-adjust: 100%;
+}
+
+body {
+  min-block-size: 100vh;
+  margin: 0;
+  font-size: var(--font-size-body);
+  line-height: 1.4;
+  background: var(--color-page-background);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: var(--color-link);
+}
+
+img,
+svg {
+  display: block;
+  max-inline-size: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+#root {
+  min-block-size: 100vh;
+}
+

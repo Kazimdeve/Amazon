@@ -1,0 +1,12 @@
+.page {
+  inline-size: min(100% - (2 * var(--space-4)), var(--content-max-width));
+  margin-inline: auto;
+  padding-block: var(--space-8);
+}
+
+.title {
+  margin: 0;
+  font-size: var(--font-size-heading);
+  line-height: 1.25;
+}
+

@@ -1,0 +1,818 @@
+.header {
+  position: relative;
+  z-index: 100;
+  min-inline-size: 0;
+  color: var(--color-surface);
+  background: var(--color-header);
+}
+
+.skipLink {
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 8px;
+  z-index: 200;
+  padding: 8px 14px;
+  color: var(--color-surface);
+  background: var(--color-header);
+  border: 2px solid var(--color-surface);
+  transform: translateY(-120%);
+}
+
+.skipLink:focus {
+  transform: translateY(0);
+}
+
+.primaryRow {
+  display: flex;
+  align-items: center;
+  block-size: 60px;
+  padding-inline: 8px 7px;
+  gap: 2px;
+}
+
+.mobileMenuButton,
+.mobileAccountLabel,
+.mobileAccountIcon {
+  display: none;
+}
+
+.navBox {
+  min-inline-size: 0;
+  block-size: 50px;
+  margin-block: 5px;
+  color: var(--color-surface);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navBox:hover,
+.navBox:focus-visible,
+.secondaryLink:hover,
+.secondaryLink:focus-visible {
+  border-color: var(--color-surface);
+  outline: none;
+}
+
+.logoLink {
+  position: relative;
+  display: flex;
+  flex: 0 0 126px;
+  align-items: flex-start;
+  padding: 4px 6px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.logoText {
+  font-family: Arial, sans-serif;
+  font-size: 29px;
+  font-weight: 700;
+  line-height: 34px;
+  letter-spacing: -1.75px;
+}
+
+.logoSmile {
+  position: absolute;
+  inset-block-start: 29px;
+  inset-inline-start: 17px;
+  inline-size: 78px;
+  block-size: 16px;
+  fill: none;
+  stroke: var(--color-search-accent);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.6;
+}
+
+.location {
+  display: flex;
+  flex: 0 0 112px;
+  align-items: center;
+  padding: 8px 7px 5px 5px;
+  text-align: start;
+}
+
+.locationIcon {
+  align-self: flex-end;
+  inline-size: 19px;
+  block-size: 24px;
+  margin-inline-end: 3px;
+}
+
+.locationIcon svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.twoLineLabel {
+  display: flex;
+  min-inline-size: 0;
+  flex-direction: column;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.labelTop {
+  color: #cccccc;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.labelBottom {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 15px;
+}
+
+.searchForm {
+  display: flex;
+  flex: 1 1 420px;
+  align-items: stretch;
+  min-inline-size: 250px;
+  block-size: 40px;
+  margin: 0 4px;
+  overflow: hidden;
+  background: var(--color-surface);
+  border-radius: 4px;
+}
+
+.searchForm:focus-within {
+  box-shadow: 0 0 0 3px var(--color-search-accent);
+}
+
+.departmentWrap {
+  position: relative;
+  display: flex;
+  min-inline-size: 54px;
+  max-inline-size: 190px;
+  flex: 0 0 auto;
+  background: #e6e6e6;
+  border-inline-end: 1px solid #cdcdcd;
+}
+
+.departmentWrap:hover {
+  background: #d4d4d4;
+}
+
+.departmentLabel {
+  display: flex;
+  min-inline-size: 54px;
+  align-items: center;
+  padding: 0 20px 0 10px;
+  color: #555555;
+  font-size: 12px;
+  line-height: 40px;
+  white-space: nowrap;
+}
+
+.departmentSelect {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  opacity: 0;
+  appearance: none;
+  cursor: pointer;
+}
+
+.departmentChevron {
+  position: absolute;
+  inset-block-start: 17px;
+  inset-inline-end: 7px;
+  inline-size: 8px;
+  block-size: 5px;
+  color: #555555;
+  pointer-events: none;
+}
+
+.departmentChevron svg,
+.smallChevron svg,
+.accountChevron svg,
+.navChevron svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.searchInput {
+  min-inline-size: 0;
+  flex: 1 1 auto;
+  padding: 7px 10px 8px;
+  color: var(--color-text-primary);
+  font-size: 15px;
+  line-height: 24px;
+  background: var(--color-surface);
+  border: 0;
+  outline: 0;
+}
+
+.searchInput::-webkit-search-cancel-button {
+  appearance: none;
+}
+
+.searchButton {
+  display: grid;
+  flex: 0 0 45px;
+  place-items: center;
+  color: #111111;
+  background: #febd69;
+  border: 0;
+  cursor: pointer;
+}
+
+.searchButton:hover {
+  background: #f3a847;
+}
+
+.searchButton:focus-visible {
+  position: relative;
+  outline: 3px solid var(--color-search-accent);
+  outline-offset: -3px;
+}
+
+.searchButton svg {
+  inline-size: 24px;
+  block-size: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 2.3;
+}
+
+.language {
+  display: flex;
+  flex: 0 0 67px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 0 4px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.flag {
+  position: relative;
+  inline-size: 18px;
+  block-size: 12px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #b22234 0,
+    #b22234 1.85px,
+    #ffffff 1.85px,
+    #ffffff 3.7px
+  );
+  box-shadow: 0 0 0 1px rgb(255 255 255 / 20%);
+}
+
+.flag::before {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inline-size: 8px;
+  block-size: 6.5px;
+  background: #3c3b6e;
+  content: '';
+}
+
+.smallChevron,
+.accountChevron,
+.navChevron {
+  inline-size: 8px;
+  block-size: 5px;
+  color: #a7acb2;
+}
+
+.account {
+  position: relative;
+  display: flex;
+  flex: 0 0 132px;
+  align-items: center;
+  padding: 7px 13px 5px 8px;
+  text-align: start;
+}
+
+.accountChevron {
+  position: absolute;
+  inset-inline-end: 5px;
+  inset-block-end: 11px;
+}
+
+.orders {
+  display: flex;
+  flex: 0 0 79px;
+  align-items: center;
+  padding: 7px 7px 5px;
+  text-align: start;
+}
+
+.cart {
+  display: flex;
+  flex: 0 0 96px;
+  align-items: flex-end;
+  padding: 3px 5px 6px 3px;
+}
+
+.cartGraphic {
+  position: relative;
+  display: block;
+  inline-size: 49px;
+  block-size: 38px;
+}
+
+.cartGraphic svg {
+  inline-size: 49px;
+  block-size: 38px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.9;
+}
+
+.cartCount {
+  position: absolute;
+  inset-block-start: -4px;
+  inset-inline-start: 25px;
+  min-inline-size: 18px;
+  color: var(--color-search-accent);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+}
+
+.cartLabel {
+  margin-block-end: 2px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.secondaryRow {
+  display: flex;
+  align-items: center;
+  block-size: 39px;
+  padding-inline: 10px 8px;
+  overflow: hidden;
+  background: var(--color-secondary-nav);
+}
+
+.secondaryLink {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  block-size: 34px;
+  padding: 0 9px;
+  color: var(--color-surface);
+  font-size: 14px;
+  line-height: 14px;
+  white-space: nowrap;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.allButton {
+  gap: 5px;
+  padding-inline: 7px 9px;
+  font-weight: 700;
+}
+
+.hamburger {
+  inline-size: 21px;
+  block-size: 21px;
+}
+
+.hamburger svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: square;
+  stroke-width: 2.3;
+}
+
+.navChevron {
+  margin-block-start: 3px;
+  margin-inline-start: 4px;
+}
+
+.visuallyHidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.menuLayer {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  display: flex;
+}
+
+.menuBackdrop {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  padding: 0;
+  background: rgb(15 17 17 / 65%);
+  border: 0;
+  cursor: pointer;
+}
+
+.menuDrawer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  inline-size: min(88vw, 365px);
+  block-size: 100%;
+  flex-direction: column;
+  color: var(--color-text-primary);
+  background: var(--color-surface);
+  box-shadow: 8px 0 24px rgb(15 17 17 / 24%);
+}
+
+.menuHeader {
+  display: flex;
+  min-block-size: 66px;
+  align-items: center;
+  padding: 11px 14px 11px 22px;
+  color: var(--color-surface);
+  background: var(--color-secondary-nav);
+  gap: 10px;
+}
+
+.menuHeader h2 {
+  min-inline-size: 0;
+  flex: 1 1 auto;
+  margin: 0;
+  font-size: 19px;
+  line-height: 25px;
+}
+
+.menuHeaderIcon {
+  inline-size: 28px;
+  block-size: 28px;
+}
+
+.menuHeaderIcon svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-width: 1.8;
+}
+
+.menuClose {
+  display: grid;
+  flex: 0 0 44px;
+  inline-size: 44px;
+  block-size: 44px;
+  place-items: center;
+  color: var(--color-surface);
+  font-size: 32px;
+  line-height: 1;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.menuClose:hover,
+.menuClose:focus-visible {
+  border-color: var(--color-surface);
+  outline: none;
+}
+
+.menuContent {
+  min-block-size: 0;
+  flex: 1 1 auto;
+  padding: 10px 0 24px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.menuContent a,
+.drawerLanguage {
+  display: flex;
+  min-block-size: 44px;
+  align-items: center;
+  inline-size: 100%;
+  padding: 8px 24px;
+  color: var(--color-text-primary);
+  font-size: 15px;
+  line-height: 20px;
+  background: transparent;
+  border: 0;
+  text-align: start;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.menuContent a:hover,
+.menuContent a:focus-visible,
+.drawerLanguage:hover,
+.drawerLanguage:focus-visible {
+  background: #eaeded;
+  outline: none;
+}
+
+.menuContent h3 {
+  margin: 14px 24px 4px;
+  color: #565959;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.drawerLanguage {
+  margin-block-start: 12px;
+  border-block-start: 1px solid var(--color-border);
+  gap: 9px;
+}
+
+.drawerLanguage .smallChevron {
+  margin-inline-start: auto;
+}
+
+@media (max-width: 1180px) {
+  .optionalMedium,
+  .optionalWide {
+    display: none;
+  }
+}
+
+@media (max-width: 1060px) {
+  .optionalCompact {
+    display: none;
+  }
+
+  .location {
+    flex-basis: 101px;
+  }
+
+  .account {
+    flex-basis: 124px;
+  }
+}
+
+@media (max-width: 899px) {
+  .primaryRow {
+    display: grid;
+    grid-template:
+      'menu logo account cart' 52px
+      'search search search search' 56px
+      'location location location location' 44px /
+      48px minmax(78px, 1fr) auto 58px;
+    block-size: auto;
+    padding: 0;
+    gap: 0;
+  }
+
+  .navBox {
+    block-size: 44px;
+    margin-block: 4px;
+  }
+
+  .mobileMenuButton {
+    display: grid;
+    grid-area: menu;
+    inline-size: 48px;
+    place-items: center;
+    padding: 0;
+  }
+
+  .mobileMenuButton .hamburger {
+    inline-size: 25px;
+    block-size: 25px;
+  }
+
+  .logoLink {
+    grid-area: logo;
+    justify-self: start;
+    inline-size: 108px;
+    min-inline-size: 108px;
+    padding: 3px 5px 0;
+  }
+
+  .logoText {
+    font-size: 26px;
+    line-height: 34px;
+  }
+
+  .logoTld {
+    margin-block-start: 11px;
+    font-size: 10px;
+  }
+
+  .logoSmile {
+    inset-block-start: 28px;
+    inset-inline-start: 14px;
+    inline-size: 72px;
+  }
+
+  .location {
+    grid-area: location;
+    inline-size: 100%;
+    block-size: 44px;
+    margin: 0;
+    padding: 0 13px;
+    background: var(--color-secondary-nav);
+    border: 0;
+    border-radius: 0;
+  }
+
+  .locationIcon {
+    align-self: center;
+    inline-size: 19px;
+    block-size: 23px;
+    margin-inline-end: 6px;
+  }
+
+  .location .twoLineLabel {
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .location .labelTop,
+  .location .labelBottom {
+    color: var(--color-surface);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  .location .labelBottom {
+    font-weight: 700;
+  }
+
+  .searchForm {
+    grid-area: search;
+    inline-size: auto;
+    min-inline-size: 0;
+    block-size: 44px;
+    margin: 4px 8px 8px;
+    border-radius: 8px;
+  }
+
+  .departmentWrap {
+    display: none;
+  }
+
+  .searchInput {
+    inline-size: 0;
+    padding-inline: 12px 8px;
+    font-size: 16px;
+  }
+
+  .searchButton {
+    flex-basis: 52px;
+    min-inline-size: 52px;
+  }
+
+  .language,
+  .orders {
+    display: none;
+  }
+
+  .account {
+    display: flex;
+    grid-area: account;
+    justify-self: end;
+    inline-size: auto;
+    min-inline-size: 86px;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 3px 0 6px;
+  }
+
+  .account .twoLineLabel,
+  .accountChevron {
+    display: none;
+  }
+
+  .mobileAccountLabel {
+    display: inline;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .mobileAccountLabel::after {
+    margin-inline-start: 3px;
+    content: '\203A';
+  }
+
+  .mobileAccountIcon {
+    display: block;
+    inline-size: 27px;
+    block-size: 27px;
+    margin-inline-start: 2px;
+  }
+
+  .mobileAccountIcon svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-width: 1.8;
+  }
+
+  .cart {
+    grid-area: cart;
+    inline-size: 58px;
+    min-inline-size: 58px;
+    align-items: center;
+    justify-self: end;
+    padding: 2px 4px 2px 1px;
+  }
+
+  .cartGraphic,
+  .cartGraphic svg {
+    inline-size: 47px;
+    block-size: 36px;
+  }
+
+  .cartCount {
+    inset-block-start: -3px;
+    inset-inline-start: 24px;
+  }
+
+  .cartLabel {
+    display: none;
+  }
+
+  .secondaryRow {
+    block-size: 44px;
+    padding-inline: 4px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .secondaryRow::-webkit-scrollbar {
+    display: none;
+  }
+
+  .secondaryLink {
+    block-size: 44px;
+    padding-inline: 11px;
+  }
+
+  .allButton {
+    display: none;
+  }
+
+  .optionalCompact,
+  .optionalMedium,
+  .optionalWide {
+    display: inline-flex;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .departmentWrap {
+    display: flex;
+    max-inline-size: 180px;
+    flex-basis: auto;
+  }
+
+  .primaryRow {
+    grid-template-columns: 52px minmax(90px, 1fr) auto 64px;
+  }
+
+  .mobileMenuButton {
+    inline-size: 52px;
+  }
+
+  .cart {
+    inline-size: 64px;
+    min-inline-size: 64px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .searchForm {
+    margin-inline: 8px;
+  }
+
+  .primaryRow {
+    padding-inline: 10px 9px;
+  }
+}

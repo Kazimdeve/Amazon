@@ -1,0 +1,311 @@
+Act as a Principal Frontend Engineer, Senior UI/UX Engineer, and QA Engineer.
+
+Implement a polished Amazon-style CHECKOUT PAYMENT FLOW and ORDER SUCCESS page for this hiring-assignment clone.
+
+This is a demo only. DO NOT integrate a real payment gateway and DO NOT collect/process real card information.
+
+The implementation must integrate cleanly with the existing cart and must NOT break any existing functionality.
+
+TASK — PAYMENT + ORDER SUCCESS
+
+Create a professional checkout/payment experience that visually belongs to the existing Amazon-style application.
+
+==================================================
+1. CHECKOUT / PAYMENT PAGE
+==================================================
+
+Create a checkout/payment route and connect the existing cart's "Proceed to Checkout" button to it.
+
+The page should clearly show:
+
+- Checkout heading
+- Order summary
+- Products being purchased
+- Item quantities
+- Subtotal
+- Savings/discounts if applicable
+- Final order total
+- Payment method selection
+- Place Order / Complete Order CTA
+
+Keep the interface dense, professional, responsive, and consistent with the existing Amazon-inspired UI.
+
+Do NOT turn it into a generic modern SaaS checkout.
+
+==================================================
+2. PAYMENT METHODS
+==================================================
+
+Support two DEMO payment methods:
+
+A. COA
+B. Card
+
+Display them as clean selectable payment options.
+
+Only one payment method can be active at a time.
+
+When COA is selected:
+- clearly show COA as the selected payment method
+- show only information/actions required for this demo
+- do not invent unnecessary business rules
+
+When Card is selected:
+show a professional card-payment form containing:
+
+- Cardholder name
+- Card number
+- Expiry
+- CVV
+
+IMPORTANT:
+This is DEMO functionality only.
+
+Do not integrate Stripe, PayPal, Braintree, or any real payment provider.
+Do not send card information anywhere.
+Do not persist card details.
+Do not log card information.
+
+==================================================
+3. DUMMY CARDS
+==================================================
+
+Provide clearly labeled DEMO/TEST cards that can be used by the evaluator.
+
+Create dummy scenarios such as:
+
+Successful payment:
+4242 4242 4242 4242
+
+Declined payment:
+4000 0000 0000 0002
+
+Use any future expiry date and a dummy 3-digit CVV.
+
+These numbers must ONLY trigger local simulated behavior.
+
+Make it obvious in the UI that these are TEST CARDS and that no real payment is processed.
+
+Implement sensible form validation:
+
+- required fields
+- card number formatting
+- expiry formatting
+- CVV validation
+- invalid/expired date handling
+
+Do not implement unnecessarily complex payment validation.
+
+==================================================
+4. PAYMENT PROCESSING UX
+==================================================
+
+When the user clicks Place Order:
+
+Validate the selected payment method.
+
+For Card:
+- validate fields
+- simulate processing
+- disable duplicate submission while processing
+- show an appropriate processing state
+- successful dummy card → order success
+- declined dummy card → show a professional inline payment error and allow retry
+
+For COA:
+- simulate successful order placement according to the existing demo flow
+
+Do not use random payment outcomes.
+
+The behavior must be deterministic and testable.
+
+==================================================
+5. ORDER SUCCESS PAGE
+==================================================
+
+After successful order placement, navigate to a dedicated order-success page.
+
+Create a polished Amazon-style confirmation experience.
+
+Show:
+
+- clear success confirmation
+- "Order placed" messaging
+- generated demo order number
+- purchased items
+- quantities
+- payment method
+- order total
+- appropriate delivery/order information already available in the application
+- Continue Shopping button
+- Back to Home button where appropriate
+
+The page should feel complete and professional rather than displaying only a green checkmark.
+
+Generate a safe local demo order ID such as:
+
+ORDER-XXXXXXXX
+
+Do not claim a real Amazon order was created.
+
+==================================================
+6. CART BEHAVIOR
+==================================================
+
+The checkout must use the REAL current cart state.
+
+Order totals must come from the existing cart calculations.
+
+Do NOT duplicate pricing/business logic.
+
+After successful order placement:
+
+1. Preserve the completed order information long enough for the success page to render.
+2. Clear the active cart.
+3. Header cart count should update to 0.
+4. Refresh behavior on the success page should be handled gracefully.
+
+Do NOT clear the cart for declined/failed payments.
+
+==================================================
+7. RESPONSIVENESS
+==================================================
+
+The entire checkout and success flow must be fully responsive.
+
+Explicitly test:
+
+320px
+360px
+375px
+390px
+430px
+480px
+768px
+820px
+1024px
+1280px
+1440px
+1920px
+
+Check:
+
+- payment method layout
+- card form
+- order summary
+- product information
+- buttons
+- totals
+- error messages
+- success page
+- long product titles
+
+There must be:
+
+- no horizontal overflow
+- no clipped fields
+- no overlapping content
+- no broken grids
+- no unreadable text
+- no tiny touch targets
+
+Desktop should use the available width professionally.
+
+Mobile should intentionally recompose into a clean single-column checkout.
+
+==================================================
+8. VISUAL QUALITY
+==================================================
+
+Match the existing Amazon-inspired design system:
+
+- typography
+- colors
+- yellow CTA treatment
+- borders
+- spacing
+- cards/panels
+- pricing hierarchy
+- link styling
+- page density
+- responsive behavior
+
+The payment page should look like it belongs to the SAME application.
+
+Do not redesign the rest of the application.
+Do not introduce a different design system.
+
+==================================================
+9. SECURITY / DEMO RULES
+==================================================
+
+This is a hiring-assignment demo.
+
+STRICTLY:
+
+- no real payments
+- no payment APIs
+- no real card storage
+- no card data in localStorage
+- no card data in sessionStorage
+- no card data in URLs
+- no card data in logs
+- no card data sent over the network
+- clearly label test-card functionality
+
+==================================================
+10. TESTING
+==================================================
+
+Testing is mandatory.
+
+Test at minimum:
+
+1. Cart → Checkout navigation
+2. Empty cart → Checkout
+3. COA selection
+4. Card selection
+5. Missing card fields
+6. Invalid card number
+7. Invalid expiry
+8. Invalid CVV
+9. Successful dummy card
+10. Declined dummy card
+11. Duplicate Place Order clicks
+12. Successful order → cart cleared
+13. Failed payment → cart preserved
+14. Order total correctness
+15. Success-page information
+16. Continue Shopping
+17. Refresh behavior
+18. Mobile/tablet/desktop layouts
+
+Add/update automated tests where appropriate.
+
+Run:
+
+- unit tests
+- component tests
+- Playwright/E2E tests
+- TypeScript checks
+- lint
+- production build
+
+Fix all issues introduced by this implementation.
+
+Do NOT merely describe what should be implemented.
+
+IMPLEMENT the complete payment and order-success flow.
+
+Do not add unrelated functionality.
+Do not break existing homepage, search, PDP, cart, header, routing, or responsive behavior.
+
+At the end provide a concise report:
+
+- routes created
+- functionality implemented
+- dummy payment behavior
+- tests added/run
+- responsive widths verified
+- build status
+- any remaining known issues

@@ -1,0 +1,322 @@
+.cartPage {
+  min-block-size: 560px;
+  padding: 28px 20px 56px;
+  color: #0f1111;
+  background: #eaeded;
+}
+
+.cartLayout {
+  display: grid;
+  inline-size: min(100%, 1500px);
+  align-items: start;
+  margin-inline: auto;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 20px;
+}
+
+.cartPanel,
+.subtotalCard {
+  background: #ffffff;
+}
+
+.cartPanel { padding: 20px; }
+
+.cartHeading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  padding-block-end: 9px;
+  border-block-end: 1px solid #dddddd;
+}
+
+.cartHeading h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 36px;
+}
+
+.cartHeading p,
+.cartHeading > span {
+  margin: 0;
+  color: #565959;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.cartHeading p { color: #007185; }
+
+.emptyCart {
+  display: flex;
+  min-block-size: 230px;
+  align-items: center;
+  justify-content: center;
+  padding: 34px 24px;
+  gap: 32px;
+}
+
+.emptyCart svg {
+  inline-size: 120px;
+  block-size: 90px;
+  fill: none;
+  stroke: #879596;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 4;
+}
+
+.emptyCart h2 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.emptyCart p {
+  margin: 5px 0 16px;
+  color: #565959;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.emptyCart a {
+  display: inline-flex;
+  min-block-size: 36px;
+  align-items: center;
+  padding: 6px 15px;
+  color: #0f1111;
+  font-size: 13px;
+  background: #ffd814;
+  border: 1px solid #fcd200;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.cartRow {
+  display: grid;
+  padding-block: 18px;
+  border-block-end: 1px solid #dddddd;
+  grid-template-columns: 180px minmax(0, 1fr) minmax(90px, auto);
+  gap: 16px;
+}
+
+.imageLink {
+  display: grid;
+  block-size: 180px;
+  place-items: center;
+}
+
+.imageLink img {
+  display: block;
+  max-inline-size: 100%;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: contain;
+}
+
+.itemDetails { min-inline-size: 0; }
+
+.itemTitle {
+  color: #0f1111;
+  font-size: 18px;
+  line-height: 24px;
+  text-decoration: none;
+}
+
+.itemTitle:hover,
+.itemTitle:focus-visible,
+.itemActions button:hover,
+.itemActions button:focus-visible {
+  color: #c45500;
+  text-decoration: underline;
+}
+
+.inStock,
+.lowStock,
+.variant,
+.prime,
+.itemSavings {
+  margin: 4px 0 0;
+  font-size: 12px;
+  line-height: 17px;
+}
+
+.inStock { color: #007600; }
+.lowStock { color: #b12704; }
+.variant strong { font-weight: 700; }
+.prime { color: #00a8e1; }
+.prime::first-letter { color: #f8991d; }
+.itemSavings { color: #b12704; }
+
+.itemActions {
+  display: flex;
+  align-items: center;
+  margin-block-start: 12px;
+  gap: 10px;
+}
+
+.itemActions label {
+  display: inline-flex;
+  min-block-size: 32px;
+  align-items: center;
+}
+
+.itemActions select {
+  block-size: 32px;
+  padding-inline: 9px 26px;
+  font-size: 12px;
+  background: #f0f2f2;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgb(15 17 17 / 12%);
+  cursor: pointer;
+}
+
+.itemActions button {
+  min-block-size: 32px;
+  padding: 4px 10px;
+  color: #007185;
+  font-size: 12px;
+  background: transparent;
+  border: 0;
+  border-inline-start: 1px solid #dddddd;
+  cursor: pointer;
+}
+
+.itemPrice {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  font-size: 18px;
+  line-height: 24px;
+  white-space: nowrap;
+}
+
+.itemPrice span {
+  color: #565959;
+  font-size: 12px;
+  line-height: 17px;
+  text-decoration: line-through;
+}
+
+.panelSubtotal {
+  margin: 4px 0 0;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: end;
+}
+
+.subtotalCard {
+  padding: 20px;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+}
+
+.savings {
+  margin: 0 0 7px;
+  color: #067d62;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.subtotal {
+  margin: 0;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.giftOrder {
+  display: flex;
+  align-items: flex-start;
+  margin-block-start: 9px;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 17px;
+}
+
+.giftOrder input { margin: 2px 0 0; }
+
+.subtotalCard > button,
+.checkoutButton {
+  inline-size: 100%;
+  min-block-size: 40px;
+  margin-block-start: 14px;
+  color: #0f1111;
+  font-size: 13px;
+  background: #ffd814;
+  border: 1px solid #fcd200;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.checkoutButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 44px;
+  color: var(--color-text-primary);
+  text-align: center;
+  text-decoration: none;
+}
+
+.subtotalCard > button:hover,
+.checkoutButton:hover { background: #f7ca00; }
+.subtotalCard > button:disabled {
+  background: #f7e8a1;
+  cursor: not-allowed;
+}
+.subtotalCard > button:focus-visible,
+.checkoutButton:focus-visible,
+.emptyCart a:focus-visible,
+.itemActions select:focus-visible {
+  outline: 3px solid #2162a1;
+  outline-offset: 2px;
+}
+
+.checkoutNote {
+  margin: 7px 0 0;
+  color: #565959;
+  font-size: 11px;
+  line-height: 16px;
+  text-align: center;
+}
+
+.visuallyHidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 850px) {
+  .cartPage { padding: 16px 12px 40px; }
+  .cartLayout { grid-template-columns: 1fr; gap: 12px; }
+  .subtotalCard { grid-row: 1; }
+}
+
+@media (max-width: 560px) {
+  .cartPage { padding-inline: 0; }
+  .cartPanel { padding: 16px 12px; }
+  .cartHeading h1 { font-size: 24px; line-height: 32px; }
+  .cartHeading > span { display: none; }
+  .emptyCart { align-items: flex-start; padding-inline: 4px; gap: 14px; }
+  .emptyCart svg { flex: 0 0 76px; inline-size: 76px; block-size: 62px; }
+  .emptyCart h2 { font-size: 20px; line-height: 27px; }
+  .cartRow {
+    grid-template-columns: 112px minmax(0, 1fr);
+    gap: 12px;
+  }
+  .imageLink { block-size: 126px; }
+  .itemTitle { font-size: 15px; line-height: 20px; }
+  .itemPrice { grid-column: 2; align-items: flex-start; grid-row: 2; font-size: 16px; }
+  .itemActions select,
+  .itemActions button,
+  .emptyCart a,
+  .subtotalCard > button { min-block-size: 44px; }
+  .panelSubtotal { font-size: 16px; }
+  .subtotalCard { margin-inline: 12px; }
+}
